@@ -17,10 +17,6 @@ int get_fibonacci_last_digit_naive(int n) {
     return current;
 }
 
-
-
-
-
 int main() {
    long long int n;
     std::cin >> n;
