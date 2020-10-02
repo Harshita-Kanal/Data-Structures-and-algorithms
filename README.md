@@ -22,3 +22,13 @@ The key insight in the algorithm is as follows. If there is a cycle, then, for a
 
 The algorithm thus maintains two pointers into the given sequence, one (the tortoise) at xi, and the other (the hare) at x2i. At each step of the algorithm, it increases i by one, moving the tortoise one step forward and the hare two steps forward in the sequence, and then compares the sequence values at these two pointers. The smallest value of i > 0 for which the tortoise and hare point to equal values is the desired value ν.
 
+## Merge Sort
+The **Merge Sort** algorithm is one of the many sorting algorithms known to mankind, but it specifically features many interesting aspects. But first, a short explanation of the way the algorithm works:
+
+MergeSort is a recursive sorting algorithm. Given an array **A** of size **n**, split the array (virtually) into two halves, and call the algorithm on each half seperatly. After that, merge the two sorted arrays into one big sorted array (in place of the original array) - and that's it. Since this is a recursive algorithm we must have a base case - in this case (no pun intended) it is when `n = 1`, meaning when the array only has one element. In that case, no merging needs to be done, and the array is already sorted (because an array with one elemnt is always sorted).
+
+One interesting feature of this algorithm is it's _divide and conquer_ nature. Instead of "gulping down" the whole array at once and doing a lot of computation in the same abstraction level, we "digest" it in smaller bites. The only thing we do on the surface level is the recursive call and then the merge - two very simple tasks (this is also one of the pros of recursive algorithms in general).
+
+An important factor that chips in when deciding which algorithm to use is time complexity. MergeSort's time complexity is (along with Quick Sort and Heap Sort) `O(n log n)`. This is quicker than other algorithms usually taught in high school or university which are `O(n<sup>2</sup>)` (like Bubble Sort, Insertion Sort and Selection Sort).
+
+Let us see why it is `O(n log n)`. Let's call MergeSort's time complexity `T(n)` (n being the length of the given array). Every call to MergeSort does `T(n) = 2 * T(n / 2) + n` because we call MergeSort on the half-sized arrays and then merge them (which goes over all the elements in both seperated array - hence `O(n)`). Without getting into too much recursive formula solving - We shall see that the solution `n log n` solves the equation. `n log n = 2 * (n log n) + n` = `n log n + n` = `n log n` (for more information on why this is true and what this means look up _Big-O Notation_).
