@@ -22,3 +22,15 @@ The key insight in the algorithm is as follows. If there is a cycle, then, for a
 
 The algorithm thus maintains two pointers into the given sequence, one (the tortoise) at xi, and the other (the hare) at x2i. At each step of the algorithm, it increases i by one, moving the tortoise one step forward and the hare two steps forward in the sequence, and then compares the sequence values at these two pointers. The smallest value of i > 0 for which the tortoise and hare point to equal values is the desired value ν.
 
+
+## 0-1 Knapsack Problem (Dynamic Programming)
+Here, we either take the whole item or not so it is known as 0-1 knapsack probelm. Hence, in case of 0-1 Knapsack, the value of xi can be either 0 or 1, where other constraints remain the same. 0-1 Knapsack cannot be solved by Greedy approach. Greedy approach does not ensure an optimal solution. In many instances, Greedy approach may give an optimal solution.
+
+**Problem Statement :** Knapsack is basically means bag. A bag of given capacity.We want to pack n items in your luggage.
+The ith item is worth vi dollars and weight wi pounds. Take as valuable a load as possible, but cannot exceed W pounds.vi wi W are integers. 
+**Approach using Dynamic programming :** In the Dynamic programming we will create a 2D-array. In a DP[][] table let’s consider all the possible weights from ‘1’ to ‘W’ as the columns and weights that can be kept as the rows.The state DP[i][j] will denote maximum value of ‘j-weight’ considering all values from ‘1 to ith’. So if we consider ‘wi’ (weight in ‘ith’ row) we can fill it in all columns which have ‘weight values > wi’. Now two possibilities can take place:
+1. Fill ‘wi’ in the given column.
+2. Do not fill ‘wi’ in the given column.
+Now we have to take a maximum of these two possibilities, formally if we do not fill ‘ith’ weight in ‘jth’ column then DP[i][j] state will be same as DP[i-1][j] but if we fill the weight, DP[i][j] will be equal to the value of ‘wi’+ value of the column weighing ‘j-wi’ in the previous row. So we take the maximum of these two possibilities to fill the current state. 
+**Time Complexity :** O(N*W)
+where ‘N’ is the number of weight element and ‘W’ is capacity. As for every weight element we traverse through all weight capacities 1<=w<=W.
