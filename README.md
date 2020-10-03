@@ -22,3 +22,25 @@ The key insight in the algorithm is as follows. If there is a cycle, then, for a
 
 The algorithm thus maintains two pointers into the given sequence, one (the tortoise) at xi, and the other (the hare) at x2i. At each step of the algorithm, it increases i by one, moving the tortoise one step forward and the hare two steps forward in the sequence, and then compares the sequence values at these two pointers. The smallest value of i > 0 for which the tortoise and hare point to equal values is the desired value ν.
 
+
+## Boyer–Moore majority vote algorithm
+
+The Boyer–Moore majority vote algorithm is an algorithm for finding the majority of a sequence of elements using linear time and constant space. It is named after Robert S. Boyer and J Strother Moore, who published it in 1981, and is a prototypical example of a streaming algorithm.
+
+In its simplest form, the algorithm finds a majority element, if there is one: that is, an element that occurs repeatedly for more than half of the elements of the input. A version of the algorithm that makes a second pass through the data can be used to verify that the element found in the first pass really is a majority.
+
+If a second pass is not performed and there is no majority the algorithm will not detect that no majority exists. In the case that no strict majority exists, the returned element can be arbitrary; it is not guaranteed to be the element that occurs most often (the mode of the sequence). It is not possible for a streaming algorithm to find the most frequent element in less than linear space, for sequences whose number of repetitions can be small.
+
+The algorithm maintains in its local variables a sequence element and a counter, with the counter initially zero. It then processes the elements of the sequence, one at a time. When processing an element x, if the counter is zero, the algorithm stores x as its remembered sequence element and sets the counter to one. Otherwise, it compares x to the stored element and either increments the counter (if they are equal) or decrements the counter (otherwise). At the end of this process, if the sequence has a majority, it will be the element stored by the algorithm. This can be expressed in pseudocode as the following steps:
+
+* Initialize an element m and a counter i with i = 0
+* For each element x of the input sequence:
+	* If i = 0, then assign m = x and i = 1
+	* else if m = x, then assign i = i + 1
+	* else assign i = i − 1
+* Return m
+Even when the input sequence has no majority, the algorithm will report one of the sequence elements as its result. However, it is possible to perform a second pass over the same input sequence in order to count the number of times the reported element occurs and determine whether it is actually a majority. This second pass is needed, as it is not possible for a sublinear-space algorithm to determine whether there exists a majority element in a single pass through the input.
+
+The amount of memory that the algorithm needs is the space for one element and one counter. In the random access model of computing usually used for the analysis of algorithms, each of these values can be stored in a machine word and the total space needed is O(1). If an array index is needed to keep track of the algorithm's position in the input sequence, it doesn't change the overall constant space bound. The algorithm's bit complexity (the space it would need, for instance, on a Turing machine) is higher, the sum of the binary logarithms of the input length and the size of the universe from which the elements are drawn. Both the random access model and bit complexity analyses only count the working storage of the algorithm, and not the storage for the input sequence itself.
+
+Similarly, on a random access machine the algorithm takes time O(n) (linear time) on an input sequence of n items, because it performs only a constant number of operations per input item. The algorithm can also be implemented on a Turing machine in time linear in the input length (n times the number of bits per input item).
