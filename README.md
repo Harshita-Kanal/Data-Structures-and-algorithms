@@ -22,3 +22,5 @@ The key insight in the algorithm is as follows. If there is a cycle, then, for a
 
 The algorithm thus maintains two pointers into the given sequence, one (the tortoise) at xi, and the other (the hare) at x2i. At each step of the algorithm, it increases i by one, moving the tortoise one step forward and the hare two steps forward in the sequence, and then compares the sequence values at these two pointers. The smallest value of i > 0 for which the tortoise and hare point to equal values is the desired value ν.
 
+## 0-1 Knapsack Problem
+If we are given weights and values of n items,we would put these items in a knapsack of capacity W to get the maximum total value in the knapsack. In other words, given two integer arrays val[0..n-1] and w[0..n-1] which represent values and weights associated with n items respectively. Also if given an integer W which represents knapsack capacity, we need to find out the maximum value subset of val[] such that sum of the weights of this subset is smaller than or equal to W. We cannot break an item, either we pick the complete item or don’t pick at all.
