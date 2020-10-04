@@ -22,3 +22,14 @@ The key insight in the algorithm is as follows. If there is a cycle, then, for a
 
 The algorithm thus maintains two pointers into the given sequence, one (the tortoise) at xi, and the other (the hare) at x2i. At each step of the algorithm, it increases i by one, moving the tortoise one step forward and the hare two steps forward in the sequence, and then compares the sequence values at these two pointers. The smallest value of i > 0 for which the tortoise and hare point to equal values is the desired value ν.
 
+
+## Linear Search
+Linear Search is an algorithm which can search for a particular element in an Iterable Like : Array. Linear Search will work irrespective of the iterable being sorted or not so it can be useful and a handy thing to learn.
+
+The way linear search works is it takes a look at the first element check if it is the required data and stop if found else goes to the next element and so on and so forth. 
+
+It is really easy to implement linear search can can be done so using simple for loop.
+
+The Time complexity of linear search is given below :
+    O(n),  Omega(1)
+
