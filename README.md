@@ -33,3 +33,5 @@ It is really easy to implement linear search can can be done so using simple for
 The Time complexity of linear search is given below :
     O(n),  Omega(1)
 
+We can reduce the time of linear search to a half by search from first and last of the iterable (like arrays). This can be implemented because for something like an array we have the start index and the end index. Although it reduces the time to half the time complexity will still remain the same.
+    O(n/2) == O(n)
