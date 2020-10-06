@@ -22,3 +22,14 @@ The key insight in the algorithm is as follows. If there is a cycle, then, for a
 
 The algorithm thus maintains two pointers into the given sequence, one (the tortoise) at xi, and the other (the hare) at x2i. At each step of the algorithm, it increases i by one, moving the tortoise one step forward and the hare two steps forward in the sequence, and then compares the sequence values at these two pointers. The smallest value of i > 0 for which the tortoise and hare point to equal values is the desired value ν.
 
+## Huffman Coding Algorithm
+
+Huffman Code is one algorithm used to create optimal prefix code used for lossless data compression. This algorithm was developed by David A. Huffamn while he was  Sc.D. Student at MIT, and published in the 1952 paper "A Method for the Construction of Minimum-Redundancy Codes". 
+
+The output of this algorithm is a variable length code table for encoding any source symbols. The algorithm outputs this table by using the frequency or estimated probability of occurrence for each value of the source symbol. Huffman’s algorithm is known as a greedy algorithm because the two smallest nodes (2 smallest frequencies) are chosen at each step, and this local decision results in a globally optimal encoding tree.
+
+The Huffman’s algorithm can be used for two main purposes:
+- Encoding data efficiently
+- Data Compression, reducing the file size of an image (or any file) without affecting its quality
+
+The algorithm builds a tree (T) analogous to the optimal code in the bottom-up manner. It starts with a set of |C| leaves (C is the no of characters) and performs |C| - 1 merging operations to create the final tree. 
