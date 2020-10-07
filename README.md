@@ -22,3 +22,9 @@ The key insight in the algorithm is as follows. If there is a cycle, then, for a
 
 The algorithm thus maintains two pointers into the given sequence, one (the tortoise) at xi, and the other (the hare) at x2i. At each step of the algorithm, it increases i by one, moving the tortoise one step forward and the hare two steps forward in the sequence, and then compares the sequence values at these two pointers. The smallest value of i > 0 for which the tortoise and hare point to equal values is the desired value ν.
 
+## Kadane's Algorithm
+This algorithm is used to solve the "maximum sum subarray problem". Given a 1-D array of integers (both positive, negative and zero), the task is to find the contiguous subarray with the largest sum. Return the largest sum possible.
+For example, if the array is -2,-3,4,-1,-2,1,5,-3. The subarray with maximum sum would be 4,-1,-2,1,5 with sum=7. 
+The idea is to look for all positive contiguous elements of the array and keep track of the maximum sum possible among all contiguous elements. Let's initialize sum=0 and max_sum=INT_MIN or with the first element of the array. We traverse the whole array and add each element to the value sum one by one. Each time we get a positive sum, we compare it with max_sum and update the max_sum if it is greater than max_sum.
+If the sum is negative, we again assign it with 0. Return the max_sum at the end which is the answer.
+This problem can also be solved by other techniques such as brute force, divide and conquer,dynamic programming. But Kadane's algorithm is the most efficient and easy one. Time complexity will be O(N) as we are traversing the array only once and space complexity will be O(1) as no extra space is being used.
