@@ -4,7 +4,6 @@ int ternarySearch(int arr[], int n, int key){
 	int l=0,r=n-1,mid1,mid2;
 
 	while(l<=r){
-	
 		mid1 = l + (r-l)/3;
 		mid2 = r - (r-l)/3;
 		

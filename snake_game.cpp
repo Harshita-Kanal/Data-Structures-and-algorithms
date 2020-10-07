@@ -1,6 +1,7 @@
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
+
 using namespace std;
 
 bool gameOver;
@@ -125,7 +126,6 @@ void Logic(){
 	
 	for(int i=0; i<nTail; i++)
 		if(tailX[i] == x && tailY[i] == y) gameOver = true;
-	
 	
 	if( x == fruitX && y == fruitY ){
 		score += 10;
