@@ -22,3 +22,17 @@ The key insight in the algorithm is as follows. If there is a cycle, then, for a
 
 The algorithm thus maintains two pointers into the given sequence, one (the tortoise) at xi, and the other (the hare) at x2i. At each step of the algorithm, it increases i by one, moving the tortoise one step forward and the hare two steps forward in the sequence, and then compares the sequence values at these two pointers. The smallest value of i > 0 for which the tortoise and hare point to equal values is the desired value ν.
 
+## Flood Fill Algorithm 
+This algorithm is commonly used to solve problems like the MS paint Problem. The Problem involves changing color of all the same colored pixels which are adjacent to the clicked pixel. We are given a 2D screen, location of a pixel in the screen and a color, replace color of the given pixel and all adjacent same colored pixels with the given color.
+
+The idea of the flood fill algorithm is fairly simple. We first change the color of the current pixel and then recur for the surrounding four points adjacent to it. 
+1) If x or y is outside the screen, then return.
+2) If color of screen[x][y] is not same as prevC, then return
+3) Recur for north, south, east and west.
+    floodFillUtil(screen, x+1, y, prevC, newC);
+    floodFillUtil(screen, x-1, y, prevC, newC);
+    floodFillUtil(screen, x, y+1, prevC, newC);
+    floodFillUtil(screen, x, y-1, prevC, newC); 
+    Where x,y represent the postion of the clicked pixel and prevC is the initial color of the clicked pixel and newC is the color to be assigned to that pixel.
+    
+
