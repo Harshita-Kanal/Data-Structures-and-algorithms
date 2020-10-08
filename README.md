@@ -22,3 +22,9 @@ The key insight in the algorithm is as follows. If there is a cycle, then, for a
 
 The algorithm thus maintains two pointers into the given sequence, one (the tortoise) at xi, and the other (the hare) at x2i. At each step of the algorithm, it increases i by one, moving the tortoise one step forward and the hare two steps forward in the sequence, and then compares the sequence values at these two pointers. The smallest value of i > 0 for which the tortoise and hare point to equal values is the desired value ν.
 
+## Lee's Algorithm
+If you ever get stuck in a large maze, don't panic and hope to find a chocolate bar in your pocket: that's the only advice we can give you. However, if you get yourself into a situation in a virtual maze, this topic might offer you some assistance. The Lee algorithm is one of the possible solutions for the maze routing problem — finding the shortest path between two points on a 2D grid.
+
+The Lee algorithm is used in computer-aided design systems to route wires on printed circuit boards, in the game industry (especially for real-time strategies) and other areas. 
+
+
