@@ -5,7 +5,7 @@ left half of first array should be lesser than the second half of second array a
 Thus we achieve a lograthmic time complexity.
 */
 import java.util.*;
-class abc
+class MedianOFTwoSortedArrays
 {
     static int median(int n,int m,int[] a,int[] b)
     {
