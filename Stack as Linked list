@@ -1,0 +1,83 @@
+// Stack as Linked list in C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+struct node {                                        
+
+  int data;
+  node* next;
+}*ptr,*top=NULL;
+void insertion(){                                   
+	ptr=new node;
+	cout<<"\nEnter data:";
+	cin>>ptr->data;
+	ptr->next=NULL;
+	if(top==NULL){
+		top=ptr;
+	}
+	else{
+		cout<<"\nPopped item is"<<ptr->data<<;
+		ptr->next=top;
+		top=ptr;
+	}
+}
+void deletion(){
+	if(top==NULL){
+		cout<<"\nUnderflow condition";
+	}
+	else{
+		ptr=top;
+		top=top->next;
+		delete ptr;
+	}
+	
+}
+void display(){
+	if(top==NULL){
+			cout<<"\nStack is empty";
+	}
+	else{   cout<<"\nStack:";
+			ptr=top;
+		while(ptr!=NULL){
+		cout<<ptr->data<<"\n";
+		ptr=ptr->next;
+	}
+	}
+}
+
+int main() {
+	char h;
+	
+	int n;
+    
+	do{
+	
+	cout<<"\n                --Menu--                \n"<<"1.Push into stack\n"<<"2.Pop from stack\n"<<"3.Display values\n"<<"Enter option:";
+	cin>>n;
+	switch(n){
+		case 1:{
+			insertion();
+			break;
+		}
+		case 2:{
+			deletion();
+			break;
+		}
+		case 3:{
+			display();
+			break;
+		}
+		default:{
+			cout<<"\nYou have entered wrong choice";
+			break;
+		}
+	}
+	cout<<"\nDo you want to continue(y or n):";
+	cin>>h;
+}while(h=='y');
+ 
+ 
+ return 0;
+}
