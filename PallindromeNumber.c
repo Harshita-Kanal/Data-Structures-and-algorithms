@@ -32,7 +32,7 @@ int checkPallindrome(int n)
 int main() 
 { 
 	printf("Enter a number to Check Pallindroma");
-    scanf("%d",&n) ;
+    	scanf("%d",&n) ;
 	printf("Is %d a Palindrome number? -> %s\n", n, checkPallindrome(n) == 1 ? "true" : "false"); 
 
 	return 0; 
