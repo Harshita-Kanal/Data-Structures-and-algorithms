@@ -1,0 +1,5 @@
+Neural Network
+The usefulness of a Neural Network in the area of sentiment analysis is that it can become prolific at analysing ‘sentence level’ or ‘phrase level’ classification of text which means it can detect language nuances such as sarcasm more accurately. Another way the Neural Network has shown in recent years to be a useful method for sentiment analysis tasks is its apparent ability to classify from different spheres, from reviews to twitter data and beyond.
+
+Neural Networks are a type of classification or regression model which use activated processing units called ‘neurons’ or ‘activation functions’ which are organised into layers. Information from the input vector is passed through links between neurons known as weights which, as the vectors continue to pass through the network, work together to adjust weights between neurons and produce an output, which is then approximated to the value of the class label the model is predicting.
+They are generally divided into ‘feed forward networks’ and ‘recurrent networks’. Some of the most common and widely used and researched Neural Network models include ‘LSTM’, ‘BERT’ and ‘CNN’
