@@ -1,0 +1,49 @@
+ This approach is useful in cases that involves arrays containing numbers in a given range. 
+For Ex-
+
+You are given an unsorted array containing numbers from range 0 to n. It may have duplicates, i.e some numbers will be missing. Find all the missing numbers.
+Here,we can use fact that the input array have numbers in range of 0 to n.
+
+And to efficiently sort this unsorted array, we can place each number in its correct place. 
+And once we are done with the sorting, we can traverse the sorted array to find all numbers that are missing.
+
+
+
+#CPP Code for the approach mentioned above.
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int find(vector<int>& nums) {
+        int n=nums.size();
+        int i=0;
+       while(i<n)
+        {
+            if(nums[i]<n && nums[i]!=i)
+            {
+                swap(nums[i],nums[nums[i]]);
+            }
+           else 
+               i++;
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]!=i)
+                return i;
+        }
+        return n;
+    }
+int main() {
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++)
+    cin>>v[i];
+    cout<<find(v);
+    
+}
+
+
+
+    Time Complexity-O(n)
+    Space Complexity-O(1)
