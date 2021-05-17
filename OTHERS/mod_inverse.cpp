@@ -14,9 +14,14 @@ ll powm(ll a, ll b,ll m){
     return ans;
 }
 
+ll mod_inverse(ll x, ll m){
+    return powm(x, m-2, m);
+}
+
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    cout<<powm(7,256,13);
-    //ans is 9
+    cout<<mod_inverse(3,11);
+    //ans is 4
+    return 0;
 }
