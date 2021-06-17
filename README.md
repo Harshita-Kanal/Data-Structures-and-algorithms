@@ -25,3 +25,10 @@ The algorithm thus maintains two pointers into the given sequence, one (the tort
 A* algorithm is used to find the shortest path in a grapg/tree. As it uses an heuristic to guide the search. The algorithm starts from an initial start node, expands neighbors and updates the full path cost of each neighbor. It selects the neighbor with the lowest cost and continues until it finds a goal node, this can be implemented with a priority queue or by sorting the list of open nodes in ascending order. It is important to select a good heuristic to make A* fast in searches, a good heuristic should be close to the actual cost but should not be higher than the actual cost.
 
 A* is complete and optimal, it will find the shortest path to the goal. A good heuristic can make the search very fast, but it may take a long time and consume a lot of memory in a large search space. The time complexity is O(n) in a grid and O(b^d) in a graph/tree with a branching factor (b) and a depth (d). The branching factor is the average number of neighbor nodes that can be expanded from each node and the depth is the average number of levels in a graph/tree.
+
+## Quick Sort
+<br><br>
+Quick sort is a highly efficient sorting algorithm and is based on partitioning of array of data into smaller arrays. A large array is partitioned into two arrays one of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value.<br><br>
+
+Quicksort partitions an array and then calls itself recursively twice to sort the two resulting subarrays. This algorithm is quite efficient for large-sized data sets as its average and worst-case complexity are O(nLogn) and image.png(n2), respectively.<br><br>
+
